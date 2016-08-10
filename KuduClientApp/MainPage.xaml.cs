@@ -25,6 +25,7 @@ namespace KuduClientApp
     public sealed partial class MainPage : Page
     {
         private const string _url = "";
+        
         private const string _username = "";
         private const string _password = "";
 
