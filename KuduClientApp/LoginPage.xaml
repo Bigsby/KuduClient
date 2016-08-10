@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="KuduClientApp.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:KuduClientApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Url"/>
+        <TextBox Grid.Column="1" Text="{Binding BaseUrl, Mode=TwoWay}"/>
+        <TextBlock Text="Username" Grid.Row="1"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Username, Mode=TwoWay}"/>
+        <TextBlock Text="Password" Grid.Row="2"/>
+        <PasswordBox x:Name="pwd" Grid.Row="2" Grid.Column="1" local:PasswordProvider.Binding="{Binding PasswordProvider, Mode=TwoWay}"/>
+        <!--<local:PasswordProvider x:Name="psProv" PasswordBox="{Binding ElementName=pwd, Mode=TwoWay}" Binding="{Binding PasswordProvider, Mode=TwoWay}"/>-->
+        <Button Content="OK" Command="{Binding OK}" Grid.Row="3"/>
+    </Grid>
+</Page>
